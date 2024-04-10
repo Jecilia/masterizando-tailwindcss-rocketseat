@@ -1,5 +1,5 @@
 import { User } from 'lucide-react'
-import { useFileInput } from './Root'
+import { useFileInput } from './root'
 import { useMemo } from 'react'
 
 export function ImagePreview() {

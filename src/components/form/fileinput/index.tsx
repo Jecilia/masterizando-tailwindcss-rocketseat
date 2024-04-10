@@ -1,6 +1,7 @@
 import { Control } from './control'
 import { ImagePreview } from './imagePreview'
-import { Root } from './Root'
-import { Trigger } from './Trigger'
+import { FileList } from './file-list'
+import { Trigger } from './trigger'
+import { Root } from './root'
 
-export { Control, ImagePreview, Root, Trigger }
+export { Control, ImagePreview, Root, Trigger, FileList }
