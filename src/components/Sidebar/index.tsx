@@ -8,13 +8,13 @@ import {
   Search,
   SquareStack,
   Users,
-} from "lucide-react";
+} from 'lucide-react'
 
-import { NavItem } from "./NavItem";
-import { Logo } from "./Logo";
-import { UsedSpaceWIdget } from "./UsedSpaceWidget";
-import { Profile } from "./Profile";
-import * as Input from "../Input";
+import { NavItem } from './NavItem'
+import { Logo } from './Logo'
+import { UsedSpaceWIdget } from './UsedSpaceWidget'
+import { Profile } from './Profile'
+import * as Input from '../Input'
 
 export function Sidebar() {
   return (
@@ -22,9 +22,9 @@ export function Sidebar() {
       <Logo />
       <Input.Root>
         <Input.Prefix>
-          <Search className="h-5 w-5 text-zinc-500" />
+          <Search className=" h-5 w-5 text-zinc-500" />
         </Input.Prefix>
-        <Input.Control  placeholder="Search"/>
+        <Input.Control placeholder="Search" />
       </Input.Root>
 
       <nav className="space-y-0.5">
@@ -45,5 +45,5 @@ export function Sidebar() {
         <Profile />
       </div>
     </aside>
-  );
+  )
 }

@@ -1,6 +1,7 @@
-import { SettingTabs } from "../components/SettingsTabs";
-import * as Input from "../components/Input";
-import { Mail, User } from "lucide-react";
+import { SettingTabs } from '../SettingsTabs'
+import * as Input from '../Input'
+import { Mail } from 'lucide-react'
+import * as FileInput from '../form/fileinput'
 
 export function Home() {
   return (
@@ -8,7 +9,7 @@ export function Home() {
       <h1 className="text-3xl font-medium text-zinc-900">Setting</h1>
       <SettingTabs />
 
-      <div className="mt-6 flex flex-col">
+      <div className="mt-6 flex flex-col ">
         <div className="flex items-center justify-between border-b border-zinc-200 pb-5 ">
           <div>
             <h2 className="text-lg font-medium text-zinc-900">Personal info</h2>
@@ -36,7 +37,7 @@ export function Home() {
           id="settings"
           className="mt-6 flex w-full flex-col gap-5 divide-y divide-zinc-200 border-zinc-200"
         >
-          <div className="grid-cols-form grid gap-3">
+          <div className="grid grid-cols-form gap-3">
             <label
               htmlFor="firstName"
               className="text-sm font-medium text-zinc-700"
@@ -53,7 +54,7 @@ export function Home() {
               </Input.Root>
             </div>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="email"
               className="text-sm font-medium text-zinc-700"
@@ -72,7 +73,7 @@ export function Home() {
               />
             </Input.Root>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="photo"
               className="text-sm font-medium text-zinc-700"
@@ -82,16 +83,14 @@ export function Home() {
                 This will be displayed on your profile.
               </span>
             </label>
-            <div className="flex justify-start gap-5">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-violet-50">
-                <User className="h-8 w-8 text-violet-500" />
-              </div>
-              <label htmlFor="photo" className="flex-1 cursor-pointer flex flex-col items-center gap-3 rounded-lg border border-zinc-300 px-3 py-4 text-center text-zinc-500"> Selecionar arquivo</label>
 
-              <input type="file" className="sr-only" id="photo" />
-            </div>
+            <FileInput.Root className="flex items-start gap-5">
+              <FileInput.ImagePreview />
+              <FileInput.Trigger />
+              <FileInput.Control />
+            </FileInput.Root>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label htmlFor="Role" className="text-sm font-medium text-zinc-700">
               Role
             </label>
@@ -104,7 +103,7 @@ export function Home() {
             </Input.Root>
           </div>
 
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="country"
               className="text-sm font-medium text-zinc-700"
@@ -114,7 +113,7 @@ export function Home() {
             <div></div>
           </div>
 
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="timezone"
               className="text-sm font-medium text-zinc-700"
@@ -123,7 +122,7 @@ export function Home() {
             </label>
             <div></div>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label htmlFor="bio" className="text-sm font-medium text-zinc-700">
               Bio
               <span className="mt-0.5 block text-sm font-normal text-zinc-500">
@@ -133,7 +132,7 @@ export function Home() {
             <div></div>
           </div>
 
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="projects"
               className="text-sm font-medium text-zinc-700"
@@ -143,10 +142,28 @@ export function Home() {
                 Share a few snippets of your work.
               </span>
             </label>
-            <div></div>
+            <FileInput.Root>
+              <FileInput.Trigger />
+              <FileInput.Control multiple />
+            </FileInput.Root>
+            <div className="flex items-center justify-end gap-2 pt-5">
+              <button
+                type="button"
+                className="rounded-lg border border-zinc-700 px-4 py-2 text-sm font-semibold shadow-sm hover:bg-zinc-50"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                form="settings"
+                className="rounded-lg  bg-violet-600 px-4 py-2 text-sm font-semibold text-white  shadow-sm hover:bg-violet-700"
+              >
+                Save
+              </button>
+            </div>
           </div>
         </form>
       </div>
     </>
-  );
+  )
 }
