@@ -5,6 +5,7 @@ import { Select } from '../form/select'
 import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react'
 import { SelectItem } from '../form/select/select-item'
 import { Textarea } from '../form/textarea'
+import { Button } from '../button'
 
 export function Home() {
   return (
@@ -21,19 +22,12 @@ export function Home() {
             </span>
           </div>
           <div className="flex items-center gap-2 ">
-            <button
-              type="button"
-              className="rounded-lg border border-zinc-700 px-4 py-2 text-sm font-semibold shadow-sm hover:bg-zinc-50"
-            >
+            <Button variant="outline" type="button">
               Cancel
-            </button>
-            <button
-              type="submit"
-              form="settings"
-              className="rounded-lg  bg-violet-600 px-4 py-2 text-sm font-semibold text-white  shadow-sm hover:bg-violet-700"
-            >
+            </Button>
+            <Button type="submit" form="settings" variant="primary">
               Save
-            </button>
+            </Button>
           </div>
         </div>
         <form
@@ -149,24 +143,24 @@ export function Home() {
                   <SelectItem value="md" text="Markdown" />
                 </Select>
                 <div className="flex items-center gap-1">
-                  <button type="button" className="p-2 hover:bg-zinc-50">
+                  <Button type="button" variant="ghost">
                     <Bold className="size-4 text-zinc-500" strokeWidth={3} />
-                  </button>
-                  <button type="button" className="p-2 hover:bg-zinc-50">
+                  </Button>
+                  <Button type="button" variant="ghost">
                     <Italic className="size-4 text-zinc-500" strokeWidth={3} />
-                  </button>
-                  <button type="button" className="p-2 hover:bg-zinc-50">
+                  </Button>
+                  <Button type="button" variant="ghost">
                     <Link className="size-4 text-zinc-500" strokeWidth={3} />
-                  </button>
-                  <button type="button" className="p-2 hover:bg-zinc-50">
+                  </Button>
+                  <Button type="button" variant="ghost">
                     <List className="size-4 text-zinc-500" strokeWidth={3} />
-                  </button>
-                  <button type="button" className="p-2 hover:bg-zinc-50">
+                  </Button>
+                  <Button type="button" variant="ghost">
                     <ListOrdered
                       className="size-4 text-zinc-500"
                       strokeWidth={3}
                     />
-                  </button>
+                  </Button>
                 </div>
               </div>
               <Textarea
@@ -193,18 +187,12 @@ export function Home() {
             </FileInput.Root>
           </div>
           <div className="flex items-center justify-end gap-2 pt-5">
-            <button
-              type="button"
-              className="rounded-lg border border-zinc-700 px-4 py-2 text-sm font-semibold shadow-sm hover:bg-zinc-50"
-            >
+            <Button variant="outline" type="button">
               Cancel
-            </button>
-            <button
-              type="submit"
-              className="rounded-lg  bg-violet-600 px-4 py-2 text-sm font-semibold text-white  shadow-sm hover:bg-violet-700"
-            >
+            </Button>
+            <Button type="submit" form="settings" variant="primary">
               Save
-            </button>
+            </Button>
           </div>
         </form>
       </div>
