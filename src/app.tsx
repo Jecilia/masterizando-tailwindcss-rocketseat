@@ -3,9 +3,9 @@ import { Sidebar } from './components/Sidebar'
 
 function App() {
   return (
-    <div className="grid min-h-screen grid-cols-app">
+    <div className="min-h-screen lg:grid lg:grid-cols-app">
       <Sidebar />
-      <main className="px-4 pb-12 pt-24 lg:col-start-2 lg:p-8">
+      <main className="max-w-[100vw] px-4 pb-12 pt-24 lg:col-start-2 lg:p-8">
         <Home />
       </main>
     </div>

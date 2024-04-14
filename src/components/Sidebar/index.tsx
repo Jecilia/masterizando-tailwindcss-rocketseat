@@ -21,7 +21,7 @@ import { Button } from '../button'
 
 export function Sidebar() {
   return (
-    <Collapsible.Root className="fixed bottom-0 left-0 right-0 top-0 z-20 flex h-screen flex-col gap-6 border-b border-zinc-200 bg-white p-4 lg:right-auto lg:w-80 lg:border-r lg:px-5 lg:py-8">
+    <Collapsible.Root className="fixed left-0 right-0 top-0 z-20 flex flex-col gap-6 border-b border-zinc-200 bg-white p-4 data-[state=open]:bottom-0 lg:right-auto lg:w-80 lg:border-r lg:px-5 lg:py-8 lg:data-[state=closed]:bottom-0 ">
       <div className="flex items-center justify-between ">
         <Logo />
         <Collapsible.Trigger asChild className="lg:hidden">
@@ -30,30 +30,35 @@ export function Sidebar() {
           </Button>
         </Collapsible.Trigger>
       </div>
-      <Input.Root>
-        <Input.Prefix>
-          <Search className=" h-5 w-5 text-zinc-500" />
-        </Input.Prefix>
-        <Input.Control placeholder="Search" />
-      </Input.Root>
+      <Collapsible.Content
+        forceMount
+        className="flex flex-1 flex-col gap-6 data-[state=closed]:hidden lg:data-[state=closed]:flex"
+      >
+        <Input.Root>
+          <Input.Prefix>
+            <Search className="h-5 w-5 text-zinc-500" />
+          </Input.Prefix>
+          <Input.Control placeholder="Search" />
+        </Input.Root>
 
-      <nav className="space-y-0.5">
-        <NavItem title="Home" icon={Home} />
-        <NavItem title="Dashboard" icon={BarChart} />
-        <NavItem title="projects" icon={SquareStack} />
-        <NavItem title="Tasks" icon={CheckSquare} />
-        <NavItem title="Reporting" icon={Flag} />
-        <NavItem title="Users" icon={Users} />
-      </nav>
-      <div className="mt-auto flex flex-col gap-6">
-        <nav className="-space-y-0.5">
-          <NavItem title="Support" icon={LifeBuoy} />
-          <NavItem title="Settings" icon={Cog} />
+        <nav className="space-y-0.5">
+          <NavItem title="Home" icon={Home} />
+          <NavItem title="Dashboard" icon={BarChart} />
+          <NavItem title="projects" icon={SquareStack} />
+          <NavItem title="Tasks" icon={CheckSquare} />
+          <NavItem title="Reporting" icon={Flag} />
+          <NavItem title="Users" icon={Users} />
         </nav>
-        <UsedSpaceWIdget />
-        <div className="h-px bg-zinc-200" />
-        <Profile />
-      </div>
+        <div className="mt-auto flex flex-col gap-6">
+          <nav className="-space-y-0.5">
+            <NavItem title="Support" icon={LifeBuoy} />
+            <NavItem title="Settings" icon={Cog} />
+          </nav>
+          <UsedSpaceWIdget />
+          <div className="h-px bg-zinc-200" />
+          <Profile />
+        </div>
+      </Collapsible.Content>
     </Collapsible.Root>
   )
 }
