@@ -1,9 +1,9 @@
 import { Home } from './components/home'
 import { Sidebar } from './components/Sidebar'
 
-function App() {
+export default function App() {
   return (
-    <div className="min-h-screen lg:grid lg:grid-cols-app">
+    <div className="min-h-screen lg:grid lg:grid-cols-app ">
       <Sidebar />
       <main className="max-w-[100vw] px-4 pb-12 pt-24 lg:col-start-2 lg:p-8">
         <Home />
@@ -11,5 +11,3 @@ function App() {
     </div>
   )
 }
-
-export default App
